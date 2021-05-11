@@ -196,4 +196,27 @@ data_block = reverse_entries(data_block)
 
 final_array=create_and_fill(data_block, number_of_entries)
 
-make_charts(final_array, number_of_entries)
+# make_charts(final_array, number_of_entries)
+
+x = np.arange(0,2400,1)
+y = final_array[:4]
+import sys
+original_stdout = sys.stdout #save original
+with open('f_array.txt', 'w') as f:
+    sys.stdout = f #change to write file
+    print (final_array)
+    sys.stdout = original_stdout
+print (final_array)
+
+#row = 0
+#date = '05'
+#while row < number_of_entries:
+#    while final_array[row,0] == date:
+fig, ax = plt.subplots()
+ax.plot (x,y)
+ax.set(xlabel='Time of day', ylabel='Temperature/dewpoint spread',title='120 hour temperature dewpoint spread data')
+ax.grid()
+fig.savefig("May5th.png")
+plt.show()
+#    date = '06'
+#    row += 1
