@@ -67,59 +67,75 @@ def calculate_difference(new_data, old_data, total):
         new_data[line, 4] = new_data[line, 2] - new_data[line, 3]
     return new_data
 
-def make_charts(final_array):
+def make_charts(final_array,entries):
     """This function creates charts for temp-dew point spread for May 5th-10th from data"""
     time = final_array[:1]
-    diff = final_array[:4])
-    for line in range (0,353):
+    diff = final_array[:4]
+    x5, x6, x7, x8, x9, x10 = list()
+    y5, y6, y7, y8, y9, y10 = list()
+
+    for line in range (0,entries):
 
         if final_array[line, 0] == '05':
-            fig, ax = plt.subplots()
-            ax.plt(final_array[1], final_array[4])
-        ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-        ax.grid()
-        fig.savefig('May5th.png')
-        plt.show()
+            x5.append(final_array[line, 1])
+            y5.append(final_array[line, 4])
+        elif final_array[line, 0] == '06':
+            x6.append(final_array[line, 1])
+            y6.append(final_array[line, 4])
+        elif final_array[line, 0] == '07':
+            x7.append(final_array[line, 1])
+            y7.append(final_array[line, 4])
+        elif final_array[line, 0] == '08':
+            x8.append(final_array[line, 1])
+            y8.append(final_array[line, 4])
+        elif final_array[line, 0] == '09':
+            x9.append(final_array[line, 1])
+            y9.append(final_array[line, 4])
+        else:
+            x10.append(final_array[line, 1])
+            y10.append(final_array[line, 4])
 
-        while final_array[line, 0] == '06':
-            fig, ax = plt.subplots()
-            ax.plt(final_array[1], final_array[4])
-            ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May6th.png')
-            plt.show()
+    fig, ax = plt.subplots()
+    ax.plt(x5, y5)
+    ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
+    ax.grid()
+    plt.savefig('May5th.png')
+    plt.show()
 
-        while final_array[line, 0] == '07':
-            fig, ax = plt.subplots()
-            ax.plt(final_array[1], final_array[4])
-            ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May7th.png')
-            plt.show()
+    fig, ax2 = plt.subplots()
+    ax2.plt(x6, y6)
+    ax2.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 6th temperature/dew point spread')
+    ax2.grid()
+    plt.savefig('May6th.png')
+    plt.show()
 
-        while final_array[line, 0] == '08':
-            fig, ax = plt.subplots()
-            ax.plt(final_array[1], final_array[4])
-            ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May8th.png')
-            plt.show()
+    fig, ax3 = plt.subplots()
+    ax3.plt(x7, y7)
+    ax3.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 7th temperature/dew point spread')
+    ax3.grid()
+    plt.savefig('May7th.png')
+    plt.show()
 
-        while final_array[line, 0] == '09':
-            fig, ax = plt.subplots()
-            ax.plt(final_array[1], final_array[4])
-            ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May9th.png')
-            plt.show()
+    fig, ax4 = plt.subplots()
+    ax4.plt(x8, y8)
+    ax4.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 8th temperature/dew point spread')
+    ax.grid()
+    plt.savefig('May8th.png')
+    plt.show()
 
-        while final_array[line, 0] == '10':
-            fig, ax = plt.subplots()
-            ax.plt(final_array[1], final_array[4])
-            ax.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May10th.png')
-            plt.show()
+    fig, ax5 = plt.subplots()
+    ax5.plt(x9, y9)
+    ax4.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 9th temperature/dew point spread')
+    ax.grid()
+    plt.savefig('May9th.png')
+    plt.show()
+
+    fig, ax6 = plt.subplots()
+    ax6.plt(x10, y10)
+    ax6.set(xlabel = 'Time of day', ylable = 'Temperature/dew point spread', title = 'May 10th temperature/dew point spread')
+    ax6.grid()
+    plt.savefig('May10th.png')
+    plt.show()
 
     return 
 
@@ -135,4 +151,4 @@ data_block = reverse_entries(data_block)
 
 final_array=create_and_fill(data_block, number_of_entries)
 
-make_charts(final_array)
+make_charts(final_array, number_of_entries)
