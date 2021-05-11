@@ -1,0 +1,49 @@
+import numpy as np
+import pylab as plt 
+
+#####
+# Function Definitions
+#####
+
+def parse_ragged_array(file):
+    """This function fills in missing values in a ragged array to make a rectangular array for numpy usage"""
+    new_array = list()
+    lengths_of_lines = list()
+    with open(file, 'r') as data_block:
+        for line in data_block:
+            each_line = line.split(' ')
+            new_array.append(each_line)
+            lengths_of_lines.append(len(each_line))
+    limit = np.max(lengths_of_lines)
+    for line in out:
+        while len(line) < limit:
+            line.append('nodata')
+    return np.array(out,dtype=str)
+
+def reverse_entries(data, number):
+    """This function reverses a newest-first array into oldes_first array"""
+    count = 0
+    while count < number:
+        new_array[count] = data[number - count]
+        count += 1
+    return new_array
+
+
+#####
+# Main program
+#####
+data_block = parse_ragged_array('KCXW-120hour-METAR.txt')
+number_of_entries = data_block.size
+
+print (number_of_entries)
+
+data_block = reverse_entries(data_block, number_of_entries)
+temperature = []
+dew_point = []
+count = 0
+#for row in data_block:
+#    column = find_temp_dewpt_column(data_block[count])
+#    temperature.append(get_temperature(data_block[count,column))
+#    dew_point.append(get_dew_point(data_block[count,column))
+#    count += 1
+

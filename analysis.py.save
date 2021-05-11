@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib
+
+data_block = np.loadtxt('KCXW-120hour-METAR.txt', dtype=str, delimiter=" ", skiprows=1,usecols=(1,6))
+
+#print (data_block[0])
+#print (data_block)
+#print (data_block[1,1])
+#print (data_block[1,0])
+
+temp = []
+count = 0
+for item in data_block:
+    temp.append(data_block[count,1])
+    print (temp[count])
+    count += 1
+
+print (temp)
+
+meaning ='42/22'
+temp =  int(meaning[0:2])
+dew = int(meaning[3:5])
+print ("temp = ", temp, "dp = ", dew)
+
