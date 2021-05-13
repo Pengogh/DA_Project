@@ -54,7 +54,7 @@ def get_time(new_data, old_data, total):
 def get_temp_dewpt(new_data, old_data, total):
     """This function inserts the temperature in the third column of the returned array"""
     for line in range (0, total):	# examines each line
-        for column in range (6,12):	# searches each possible column for temp/dew pt data
+        for column in range (6,12):	# searches each 'possible' temperature column for temp/dew pt data
             element = old_data[line, column]
             if element[2:3] == '/':
                 new_data[line,2] = int(element[0:2])	# assigns temperature value
@@ -69,120 +69,115 @@ def calculate_difference(new_data, old_data, total):
 
 def make_charts(final_array,entries):
     """This function creates charts for temp-dew point spread for May 5th-10th from data"""
-    time = final_array[:1]
-    diff = final_array[:4]
-    x5=list()
-    x6=list()
-    x7=list()
-    x8=list()
-    x9=list()
-    x10=list()
-    y5=list()
-    y6=list()
-    y7=list()
-    y8=list()
-    y9=list()
-    y10=list()
+    time = final_array[:,1]
+    diff = final_array[:,4]
+    x5=[]
+    x6=[]
+    x7=[]
+    x8=[]
+    x9=[]
+    x10=[]
+    y5=[]
+    y6=[]
+    y7=[]
+    y8=[]
+    y9=[]
+    y10=[]
+
 
     for line in range (0,entries):
-        
-        fig, ax = plt.subplots()
-        if final_array[line, 0] == '05':
+        """These if-elif statements populate each day's x/y values"""
+        if final_array[line, 0] == 5:
             x5.append(final_array[line, 1])
-            y5.append(final_array[line, 4])
-            ax.plot(x5[line], y5[line])
-            ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May5th.png')
-            plt.show()
-        elif final_array[line, 0] == '06':
+            y5.append(final_array[line, 4]) 
+       
+        elif final_array[line, 0] == 6:
             x6.append(final_array[line, 1])
             y6.append(final_array[line, 4])
-            ax.plot(x6[line], y6[line])
-            ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 65th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May6th.png')
-            plt.show()
-        elif final_array[line, 0] == '07':
+
+        elif final_array[line, 0] == 7:
             x7.append(final_array[line, 1])
             y7.append(final_array[line, 4])
-            ax.plot(x7[line], y7[line])
-            ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 7th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May7th.png')
-            plt.show()
-        elif final_array[line, 0] == '08':
+
+        elif final_array[line, 0] == 8:
             x8.append(final_array[line, 1])
             y8.append(final_array[line, 4])
-            ax.plot(x8[line], y8[line])
-            ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 8th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May8th.png')
-            plt.show()
-        elif final_array[line, 0] == '09':
+
+        elif final_array[line, 0] == 9:
             x9.append(final_array[line, 1])
             y9.append(final_array[line, 4])
-            ax.plot(x9[line], y9[line])
-            ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 9th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May9th.png')
-            plt.show()
-        else:
+
+        elif final_array[line, 0] == 10:
             x10.append(final_array[line, 1])
             y10.append(final_array[line, 4])
-            ax.plot(x5[line], y5[line])
-            ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 10th temperature/dew point spread')
-            ax.grid()
-            plt.savefig('May10th.png')
-            plt.show()
-
-    ax = plt.subplots()
-    ax.plot(x5, y5)
-    ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 5th temperature/dew point spread')
-    ax.grid()
+ 
+    """These plot blocks create a chart for each day"""
+    plt.plot(x5, y5)
+    plt.title('Conway, AR airport - May 5th, 2021')
+    plt.xlabel('Time of day - 24hr clock')
+    plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
+    plt.grid(True)
+    plt.xlim([0,2400])
+    plt.hlines(2, xmin=0, xmax= 2400, color='r')
     plt.savefig('May5th.png')
     plt.show()
+
     plt.figure()
-    ax = plt.subplots()
-    ax.plot(x6, y6)
-    ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 6th temperature/dew point spread')
-    ax.grid()
+    plt.plot(x6, y6)
+    plt.title('Conway, AR airport - May 65th, 2021')
+    plt.xlabel('Time of day - 24hr clock')
+    plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
+    plt.grid(True)
+    plt.xlim([0,2400])
+    plt.hlines(2, xmin=0, xmax= 2400, color='r')
     plt.savefig('May6th.png')
     plt.show()
 
     plt.figure()
-    ax = plt.subplots()
-    ax.plot(x7, y7)
-    ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 7th temperature/dew point spread')
-    ax.grid()
+    plt.plot(x7, y7)
+    plt.title('Conway, AR airport - May 7th, 2021')
+    plt.xlabel('Time of day - 24hr clock')
+    plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
+    plt.grid(True)
+    plt.xlim([0,2400])
+    plt.hlines(2, xmin=0, xmax= 2400, color='r')
     plt.savefig('May7th.png')
     plt.show()
 
     plt.figure()
-    ax = plt.subplots()
-    ax.plot(x8, y8)
-    ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 8th temperature/dew point spread')
-    ax.grid()
+    plt.plot(x8, y8)
+    plt.title('Conway, AR airport - May 8th, 2021')
+    plt.xlabel('Time of day - 24hr clock')
+    plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
+    plt.grid(True)
+    plt.xlim([0,2400])
+    plt.hlines(2, xmin=0, xmax= 2400, color='r')
     plt.savefig('May8th.png')
     plt.show()
 
     plt.figure()
-    ax = plt.subplots()
-    ax.plot(x9, y9)
-    ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 9th temperature/dew point spread')
-    ax.grid()
+    plt.plot(x9, y9)
+    plt.title('Conway, AR airport - May 9th, 2021')
+    plt.xlabel('Time of day - 24hr clock')
+    plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
+    plt.grid(True)
+    plt.xlim([0,2400])
+    plt.hlines(2, xmin=0, xmax= 2400, color='r')
     plt.savefig('May9th.png')
     plt.show()
 
     plt.figure()
-    ax = plt.subplots()
-    ax.plot(x10, y10)
-    ax.set(xlabel = 'Time of day', ylabel = 'Temperature/dew point spread', title = 'May 10th temperature/dew point spread')
-    ax.grid()
+    plt.plot(x10, y10)
+    plt.title('Conway, AR airport - May 10th, 2021')
+    plt.xlabel('Time of day - 24hr clock')
+    plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
+    plt.grid(True)
+    plt.xlim([0,2400])
+    plt.hlines(2, xmin=0, xmax= 2400, color='r')
     plt.savefig('May10th.png')
     plt.show()
 
-    return 
+    return()
 
 #####
 # Main program
@@ -196,27 +191,5 @@ data_block = reverse_entries(data_block)
 
 final_array=create_and_fill(data_block, number_of_entries)
 
-# make_charts(final_array, number_of_entries)
+make_charts(final_array, number_of_entries)
 
-x = np.arange(0,2400,1)
-y = final_array[:4]
-import sys
-original_stdout = sys.stdout #save original
-with open('f_array.txt', 'w') as f:
-    sys.stdout = f #change to write file
-    print (final_array)
-    sys.stdout = original_stdout
-print (final_array)
-
-#row = 0
-#date = '05'
-#while row < number_of_entries:
-#    while final_array[row,0] == date:
-fig, ax = plt.subplots()
-ax.plot (x,y)
-ax.set(xlabel='Time of day', ylabel='Temperature/dewpoint spread',title='120 hour temperature dewpoint spread data')
-ax.grid()
-fig.savefig("May5th.png")
-plt.show()
-#    date = '06'
-#    row += 1

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  11 MAY 2021 01:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  11 MAY 2021 10:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -57,7 +57,7 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count175
 \l__pdf_internal_box=\box45
 )
-No file report.aux.
+(./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -74,6 +74,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count176
@@ -105,45 +106,37 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <fig3-1.png, id=1, 843.15pt x 642.4pt>
 File: fig3-1.png Graphic file (type png)
 <use fig3-1.png>
-Package pdftex.def Info: fig3-1.png  used on input line 23.
+Package pdftex.def Info: fig3-1.png  used on input line 26.
 (pdftex.def)             Requested size: 172.5pt x 131.42819pt.
 
 
-LaTeX Warning: Reference `fig: 3-1' on page 1 undefined on input line 30.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 35.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 35.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig3-1.png (PNG copy)>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 32.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 32.
- [2] (./report.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./fig3-1.png (PNG copy
+)>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  1185 strings out of 483183
- 17374 string characters out of 5966292
- 245060 words of memory out of 5000000
- 16236 multiletter control sequences out of 15000+600000
- 536593 words of font info for 38 fonts, out of 8000000 for 9000
+ 17375 string characters out of 5966292
+ 245068 words of memory out of 5000000
+ 16235 multiletter control sequences out of 15000+600000
+ 536285 words of font info for 37 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,6n,25p,600b,252s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on report.pdf (2 pages, 101661 bytes).
+ 30i,6n,25p,600b,254s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on report.pdf (2 pages, 93582 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
