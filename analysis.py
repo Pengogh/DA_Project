@@ -119,19 +119,19 @@ def make_charts(final_array,entries):
     plt.grid(True)
     plt.xlim([0,2400])
     plt.hlines(2, xmin=0, xmax= 2400, color='r')
-    plt.savefig('May5th.png')
     plt.show()
+    plt.savefig('May5th.png')
 
     plt.figure()
     plt.plot(x6, y6)
-    plt.title('Conway, AR airport - May 65th, 2021')
+    plt.title('Conway, AR airport - May 6th, 2021')
     plt.xlabel('Time of day - 24hr clock')
     plt.ylabel('Temperature/dew point spread\n(< 2 indicates fog probability)')
     plt.grid(True)
     plt.xlim([0,2400])
     plt.hlines(2, xmin=0, xmax= 2400, color='r')
-    plt.savefig('May6th.png')
     plt.show()
+    plt.savefig('May6th.png')
 
     plt.figure()
     plt.plot(x7, y7)
@@ -141,8 +141,8 @@ def make_charts(final_array,entries):
     plt.grid(True)
     plt.xlim([0,2400])
     plt.hlines(2, xmin=0, xmax= 2400, color='r')
-    plt.savefig('May7th.png')
     plt.show()
+    plt.savefig('May7th.png')
 
     plt.figure()
     plt.plot(x8, y8)
@@ -152,8 +152,8 @@ def make_charts(final_array,entries):
     plt.grid(True)
     plt.xlim([0,2400])
     plt.hlines(2, xmin=0, xmax= 2400, color='r')
-    plt.savefig('May8th.png')
     plt.show()
+    plt.savefig('May8th.png')
 
     plt.figure()
     plt.plot(x9, y9)
@@ -163,8 +163,8 @@ def make_charts(final_array,entries):
     plt.grid(True)
     plt.xlim([0,2400])
     plt.hlines(2, xmin=0, xmax= 2400, color='r')
-    plt.savefig('May9th.png')
     plt.show()
+    plt.savefig('May9th.png')
 
     plt.figure()
     plt.plot(x10, y10)
@@ -174,8 +174,8 @@ def make_charts(final_array,entries):
     plt.grid(True)
     plt.xlim([0,2400])
     plt.hlines(2, xmin=0, xmax= 2400, color='r')
-    plt.savefig('May10th.png')
     plt.show()
+    plt.savefig('May10th.png')
 
     return()
 
